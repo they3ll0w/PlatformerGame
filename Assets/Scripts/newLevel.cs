@@ -6,10 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class newLevel : MonoBehaviour
 {
+    public bool lastLevel = false;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
-        Debug.Log(nextLevel);
-        SceneManager.LoadScene(nextLevel);
+        if(lastLevel == false)
+        {
+            int nextLevel = SceneManager.GetActiveScene().buildIndex + 1;
+            SceneManager.LoadScene(nextLevel);
+        } else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
     }
 }

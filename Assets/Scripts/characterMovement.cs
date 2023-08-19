@@ -59,8 +59,5 @@ public class characterMovement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        RestartLevel();
-    }
+
 }
